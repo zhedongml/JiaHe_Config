@@ -1,0 +1,11 @@
+{
+	"Keyence": {
+		"Type": "usb",
+		"id": 0
+	},
+	"Ranging": {
+		"Max": 4,
+		"Min": -4,
+		"ZeroPos": 30
+	}
+}
