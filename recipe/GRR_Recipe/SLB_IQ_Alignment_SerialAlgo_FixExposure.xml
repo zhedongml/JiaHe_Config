@@ -37,9 +37,9 @@
     </Sequence>
    </Parallel>
    <!-- blackboard init-->
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="0.96"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.96"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_B" value="0.96"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.9032"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_B" value="1.937"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nd_select" value="ND3"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="xyzc_select" value="Clear"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="0"/>
