@@ -7,14 +7,14 @@
  "BlueCalibrationFactor":1.747e9,
  "UseShutter":true,
  "DeviceIndex":{
-	 "R":0,
-	 "G":2,
-	 "B":1
+	 "R":1,
+	 "G":0,
+	 "B":2
  },
  "ShutterIndex":{
 	 "R":2,
-	 "G":1,
-	 "B":0
+	 "G":0,
+	 "B":1
  },  
  "Voltage":{
 	 "R":300,
