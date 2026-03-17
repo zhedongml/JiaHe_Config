@@ -1,7 +1,7 @@
 {
 "WaferType":[
 {
-	"Name":"Wafer_Small_Right",
+	"Name":"Small_Right_Wafer",
 	"DutNums":6,
 	"LoadPos":{
 		"x": 36.011,
@@ -63,7 +63,7 @@
 	]
 },
 {
-	"Name":"Wafer_Large_Right",
+	"Name":"Large_Right_Wafer",
 	"DutNums":6,
 	"LoadPos":{
 		"x": 36.011,

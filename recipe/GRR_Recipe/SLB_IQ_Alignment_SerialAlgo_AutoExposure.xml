@@ -11,6 +11,7 @@
     <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
     <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
     <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
+	<Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
    </Parallel>
    <!-- SLB Alignment Init-->
    <Action name="IQ_SetDutID" ID="IQ_SetDutID" id_key="dutid" id_value="SLB"/>
@@ -23,18 +24,15 @@
    <Parallel name="Parallel">
     <Action name="AA_SLB_Alignment" ID="AA_SLB_Alignment"/>
     <Sequence name="Sequence">
-     <Action name="IS_Connect" ID="IS_Connect"/>
      <Action name="Colorimeter_Connect_All_Async" ID="Colorimeter_Connect_All_Async"/>
      <Action name="Colorimeter_Camera_StopGrabbing" ID="Colorimeter_Camera_StopGrabbing"/>
      <Action name="Colorimeter_Camera_SetBinningSelector" ID="Colorimeter_Camera_SetBinningSelector" binning_selector="Logic"/>
      <Action name="Colorimeter_Camera_SetBinningMode" ID="Colorimeter_Camera_SetBinningMode" binning_mode="Average"/>
     </Sequence>
+   </Parallel>
+   <Parallel name="Parallel">
+   	<Action name="IS_Connect" ID="IS_Connect"/>
     <Action name="Colorimeter_LoadCalibrationData" ID="Colorimeter_LoadCalibrationData" aperture="{aperture}" binning="1" colorfilter_list="X,Y,Z,Clear" ndfliter_list="ND3" lightsource_list="R,G,B,W" is_load_dark="1" is_load_colorshift="1" is_load_ffc="1" is_load_distortion="1" is_load_exposure="1" is_load_fliprotation="1" is_load_luminance="1" is_load_fourcolor="0"/>
-    <!--reticle connect and setting-->
-    <Sequence name="Sequence">
-     <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
-     <Action name="Reticle_1D_Change" ID="Reticle_1D_Change" reticle_name="Solid"/>
-    </Sequence>
    </Parallel>
    <!-- blackboard init-->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
