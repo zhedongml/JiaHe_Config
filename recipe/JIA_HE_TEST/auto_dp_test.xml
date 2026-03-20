@@ -2,6 +2,10 @@
 <root main_tree_to_execute="BehaviorTree">
  <BehaviorTree ID="BehaviorTree">
   <!-- Add nodes here -->
-  <Action name="AutoDP_SubmitTask" ID="AutoDP_SubmitTask" sourceImageDir="F:\JiaDing_Images\3N2QG01HBT0964_20251227T160956_MetricsTest" resultSaveDir="F:\JiaDing_Images"/>
+  <Sequence name="Sequence">
+   <Action name="AutoDP_SubmitTask" ID="AutoDP_SubmitTask" sourceImageDir="F:\JiaDing_Images\3N2QG01HBT0964_20251227T160962_MetricsTest" resultSaveDir="F:\JiaDing_Images"/>
+   <Action name="AutoDP_SubmitTask" ID="AutoDP_SubmitTask" sourceImageDir="F:\JiaDing_Images\3N2QG01HBT0964_20251227T160963_MetricsTest" resultSaveDir="F:\JiaDing_Images"/>
+   <Action name="AutoDP_WaitTask" ID="AutoDP_WaitTask"/>
+  </Sequence>
  </BehaviorTree>
 </root>

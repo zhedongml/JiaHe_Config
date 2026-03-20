@@ -235,7 +235,7 @@
       "BitSize": 1,
       "On": "On",
       "Off": "Off",
-      "Visible": 0
+      "Visible": 1
     },
 	{
       "Index": 22,
@@ -246,7 +246,7 @@
       "BitSize": 1,
       "On": "On",
       "Off": "Off",
-      "Visible": 0
+      "Visible": 1
     },
 	{
       "Index": 23,

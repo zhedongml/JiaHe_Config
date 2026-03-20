@@ -135,6 +135,7 @@
      </Sequence>
     </For>
    </Sequence>
+   	<!-- <Action name="AutoDP_WaitTask" ID="AutoDP_WaitTask"/> -->
    <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
   </Sequence>
  </BehaviorTree>
