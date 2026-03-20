@@ -7,7 +7,7 @@
 			"Name": "RXFilter",
 			"Protocol": "modbus/serial",
 			"MotorType": "Oriental/AZ",
-			"Port": "COM8",
+			"Port": "COM9",
 			"Station": 3,
 			"SerialInfo": {
 				"BaudRate": 115200,

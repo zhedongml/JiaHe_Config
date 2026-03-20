@@ -2,9 +2,9 @@
  "HostIP":"127.0.0.1", 
  "Port":3434, 
  "SpectraExe":"C:/Program Files (x86)/Labsphere/HELIOSense/HELIOSense.exe",
- "RedCalibrationFactor":3.919e9, 
- "GreenCalibrationFactor":9.472e9, 
- "BlueCalibrationFactor":1.929e9,
+ "RedCalibrationFactor":3.458e9, 
+ "GreenCalibrationFactor":7.896e9, 
+ "BlueCalibrationFactor":1.516e9,
  "UseShutter":true,
  "DeviceIndex":{
 	 "R":0,
