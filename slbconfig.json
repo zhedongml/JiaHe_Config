@@ -2,24 +2,24 @@
   "SLB_LoadDutXYZPosition": {
     "X": -35.778,
     "Y": 98.5,
-    "Z": 151
+    "Z": 150
   },
   "SLB_LoadImageXYZPosition": {
-    "X": 97.384,
-    "Y": 23.316,
+    "X": 44.005,
+    "Y": 90.9372,
     "Z": 0
   },
   "SLB_ProjectionTiptilt": {
-    "dX": 9.4701,
+    "dX": 9.4846,
     "dY": -0.6788
   },
   "SLB_ImagingTiptilt": {
-    "dX": -9.8001,
+    "dX": -9.8008,
     "dY": 0.44
   },
   "SLB_ImagingXYZPosition": {
-    "X": 27.246,
-    "Y": -30.9128,
-    "Z": 7.1944
+    "X": 27.156,
+    "Y": -31.0628,
+    "Z": 7.8944
   }
 }
