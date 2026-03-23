@@ -54,7 +54,7 @@
         "color": [ "R", "G", "B" ],
         "imageType": 1,
         "images": [ "$color$_solid_$eyeboxId$_Y_ND3" ],
-        "suffix": ["uniformity", "P50", "P5", "P95" ],
+        "suffix": ["uniformity", "P5", "P50", "P95" ],
         "logheader": "IQTU_Rolloff_$color$_$suffix$_0$eyeboxId$Eyebox",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
       }
@@ -66,8 +66,7 @@
         "color": [ "R", "G", "B" ],
         "imageType": 1,
         "images": [
-          "CheckerContrast_$color$_eb$eyeboxId$_ImgP",
-          "CheckerContrast_$color$_eb$eyeboxId$_ImgN"
+          "$color$_2deg_Checker_$eyeboxId$_Clear_ND3"
         ],
         "suffix": [ "meanCR"],
         "logheader": "CheckerContrast_$color$_$suffix$_0$eyeboxId$Eyebox",

@@ -20,8 +20,8 @@
     "DUTFlipUD": false
   },
   "denseMTF": {
-    "denseMTFWidth": 250,
-    "denseMTFHeight": 250
+    "denseMTFWidth": 330,
+    "denseMTFHeight": 110
   },
   "GridMTF": {
     "gridMTFWidth": 330,
