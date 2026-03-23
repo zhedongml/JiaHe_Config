@@ -54,7 +54,7 @@
         "color": [ "R", "G", "B" ],
         "imageType": 1,
         "images": [ "$color$_solid_$eyeboxId$_Y_ND3" ],
-        "suffix": [ "P50", "P5", "P95" ],
+        "suffix": ["uniformity", "P50", "P5", "P95" ],
         "logheader": "IQTU_Rolloff_$color$_$suffix$_0$eyeboxId$Eyebox",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
       }
@@ -69,7 +69,7 @@
           "CheckerContrast_$color$_eb$eyeboxId$_ImgP",
           "CheckerContrast_$color$_eb$eyeboxId$_ImgN"
         ],
-        "suffix": [ "meanCR", "minCR" ],
+        "suffix": [ "meanCR"],
         "logheader": "CheckerContrast_$color$_$suffix$_0$eyeboxId$Eyebox",
         "related": [ "SmallchessAvgCr" ],
         "eyeboxId": [ "1", "2", "3", "4", "5"]

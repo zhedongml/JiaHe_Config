@@ -2,7 +2,7 @@
   "system": {
     "pixel_size": 3.45e-3,
     "FocalLength": 40,
-    "W_opticalcenter": [ 6688, 4765 ],
+    "W_opticalcenter": [ 6688, 4764 ],
     "ROI": [ 0, 0, -1, 1 ],
     "rotaionAngle": 0,
     "GridResizeNum": 4,
@@ -13,11 +13,11 @@
     "CheckerSize": [ 26, 21 ],
     "GridSize": [ 34, 27 ],
     "SLBRotationAngle": 0, 
-    "DUTRotationAngle": 270,
+    "DUTRotationAngle": 0,
     "SLBFlipLR": false, 
     "DUTFlipLR": false,
     "SLBFlipUD": false, 
-    "DUTFlipUD": true
+    "DUTFlipUD": false
   },
   "denseMTF": {
     "denseMTFWidth": 250,
