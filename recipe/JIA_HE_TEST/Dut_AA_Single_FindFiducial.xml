@@ -16,7 +16,6 @@
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>
     <Action name="AA_Connect_Collimator" ID="AA_Connect_Collimator"/>
     <Action name="AA_Connect_Keyence" ID="AA_Connect_Keyence"/>
-
    </Sequence>
    <!-- alignment init -->
    <Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
@@ -37,11 +36,6 @@
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nameRule" value="#LightSource#_#Pattern#_#EyeboxID#_#ColorFilter#_#NDFilter#"/>
    <!-- IQ init -->
    <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="3" key="eyeboxids"/>
-   <!-- <Action name="IQ_Metrics_CreateDBTable" ID="IQ_Metrics_CreateDBTable"/> -->
-   <!-- <Action name="Colorimeter_Camera_StopGrabbing" ID="Colorimeter_Camera_StopGrabbing"/> -->
-   <!-- <Action name="Colorimeter_Camera_SetBinningSelector" ID="Colorimeter_Camera_SetBinningSelector" binning_selector="Logic"/> -->
-   <!-- <Action name="Colorimeter_Camera_SetBinningMode" ID="Colorimeter_Camera_SetBinningMode" binning_mode="Average"/> -->
-   <!-- alignment/ capture/ algo process -->
    <Sequence name="Sequence">
     <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
     <Action name="System_Tips" ID="System_Tips" tip="Please check if the prism is in DUT mode ?"/>
@@ -64,19 +58,9 @@
        <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="0" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/FAT_GRR/{cur_data}_MetricsTest/" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF-1_OQC"/>
        <Action name="AA_Dut_Align_EntrancePupil" ID="AA_Dut_Align_EntrancePupil"/>
       </Sequence>
-      <!-- define csv file & dut folder path -->
-      <For name="For" traverse_params="{eyeboxids}">
-       <Sequence name="Sequence">
-        <Action name="System_GetForNodeValue1" ID="System_GetForNodeValue1" value_key="cur_eb"/>
-        <Parallel name="Parallel">
-         <Action name="AA_Dut_Align_EyeBox" ID="AA_Dut_Align_EyeBox" eyebox_id="{cur_eb}"/>
-        </Parallel>
-      </Sequence>
-      </For>
      </Sequence>
     </For>
    </Sequence>
-   <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
   </Sequence>
  </BehaviorTree>
 </root>

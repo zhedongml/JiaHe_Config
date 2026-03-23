@@ -37,18 +37,17 @@
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="xyzc_select" value="Clear"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="binning_4" value="4"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="binning_1" value="1"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="0"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="exposure_init_time" value=""/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="1"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="exposure_init_time" value="1000"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_convert_16bit" value="0"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="convert_method" value="1"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nameRule" value="#LightSource#_#Pattern#_#EyeboxID#_#ColorFilter#_#NDFilter#"/>
    <!-- IQ init -->
-   <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="3" key="eyeboxids"/>
+   <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="1,2,3,4,5" key="eyeboxids"/>
    <Action name="IQ_Metrics_CreateDBTable" ID="IQ_Metrics_CreateDBTable"/>
    <Action name="Colorimeter_Camera_StopGrabbing" ID="Colorimeter_Camera_StopGrabbing"/>
    <Action name="Colorimeter_Camera_SetBinningSelector" ID="Colorimeter_Camera_SetBinningSelector" binning_selector="Logic"/>
    <Action name="Colorimeter_Camera_SetBinningMode" ID="Colorimeter_Camera_SetBinningMode" binning_mode="Average"/>
-   <Action name="IQ_LoadFixExposureTime" ID="IQ_LoadFixExposureTime" is_match_eb="0"/>
    <!-- alignment/ capture/ algo process -->
    <Sequence name="Sequence">
     <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
@@ -69,7 +68,7 @@
        </IfThenElse>
        <Action name="AA_Dut_AdjustLevel" ID="AA_Dut_AdjustLevel"/>
        <Action name="AA_Dut_Ranging" ID="AA_Dut_Ranging"/>
-       <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="1" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/FAT_GRR/{cur_data}_MetricsTest/" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF-1_OQC"/>
+       <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="0" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/FAT_GRR/{cur_data}_MetricsTest/" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF-1_OQC"/>
        <Action name="AA_Dut_Align_EntrancePupil" ID="AA_Dut_Align_EntrancePupil"/>
       </Sequence>
       <!-- define csv file & dut folder path -->
@@ -115,6 +114,7 @@
        <Action name="IS_CloseAllShutter" ID="IS_CloseAllShutter"/>
        <Sequence name="Sequence">
         <Action name="Colorimeter_WaitForCaptureEnd" ID="Colorimeter_WaitForCaptureEnd" timeout="20"/>
+        <Action name="IQ_UpdateFixExposureTimeConfig" ID="IQ_UpdateFixExposureTimeConfig"/>
         <SequenceStar name="SequenceStar">
          <Parallel name="Parallel">
           <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOV"/> -->
