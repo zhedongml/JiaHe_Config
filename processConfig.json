@@ -28,7 +28,17 @@
 					"Z": 49.706
 				}
 			},
+			"dut":{
+				"preTipiltAngle":{
+					"dX": -0.0227,
+					"dY": 0.5930
+				}
+			},
 			"Anticollision": {
+				"dutPreTipiltDxMax":0.5,
+				"dutPreTipiltDxMin":-0.5,
+				"dutPreTipiltDyMax":0.5,
+				"dutPreTipiltDyMin":-0.5,
 				"dutMotorAngleMax": 1.1,
 				"dutMotorAngleMin": 0.6,
 				"inputAlignmentMotorPosXMax": -38,
@@ -82,7 +92,17 @@
 					"Z": 95.916
 				}
 			},
+			"dut":{
+				"preTipiltAngle":{
+					"dX": -0.0227,
+					"dY": 0.5930
+				}
+			},
 			"Anticollision": {
+				"dutPreTipiltDxMax":0.5,
+				"dutPreTipiltDxMin":-0.5,
+				"dutPreTipiltDyMax":0.5,
+				"dutPreTipiltDyMin":-0.5,
 				"dutMotorAngleMax": 1.35,
 				"dutMotorAngleMin": 1.1,
 				"inputAlignmentMotorPosXMax": -64,
@@ -136,7 +156,17 @@
 					"Z": 95.916
 				}
 			},
+			"dut":{
+				"preTipiltAngle":{
+					"dX": -0.0227,
+					"dY": 0.5930
+				}
+			},
 			"Anticollision": {
+				"dutPreTipiltDxMax":0.5,
+				"dutPreTipiltDxMin":-0.5,
+				"dutPreTipiltDyMax":0.5,
+				"dutPreTipiltDyMin":-0.5,
 				"dutMotorAngleMax": 1,
 				"dutMotorAngleMin": 0.7,
 				"inputAlignmentMotorPosXMax": -64,
