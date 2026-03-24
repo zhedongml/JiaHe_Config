@@ -79,7 +79,7 @@
         "dispaly": false,
         "unit": "",
         "color": [ "R", "G", "B" ],
-        "images": [ "$color$_grid_$eyeboxId$_Clear_ND3" ],
+        "images": [ "Raw/$color$_grid_$eyeboxId$_Clear_ND3_Raw" ],
         "suffix": [ "HorAvg_6.25", "VerAvg_6.25", "HorMin_6.25", "VerMin_6.25", "HorAvg_12.5", "VerAvg_12.5", "HorMin_12.5", "VerMin_12.5" ],
         "logheader": "GridDenseMTF_$color$_Y_$suffix$_0$eyeboxId$Eyebox",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
