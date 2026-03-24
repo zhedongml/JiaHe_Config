@@ -7,14 +7,14 @@
  "BlueCalibrationFactor":1.516e9,
  "UseShutter":true,
  "DeviceIndex":{
-	 "R":0,
+	 "R":1,
 	 "G":2,
-	 "B":1
+	 "B":0
  },
  "ShutterIndex":{
-	 "R":2,
-	 "G":1,
-	 "B":0
+	 "R":1,
+	 "G":0,
+	 "B":2
  },  
  "Voltage":{
 	 "R":300,
@@ -67,7 +67,7 @@
 	"luminanceMax":1088000,
 	"colorFocus": "W",
 	"currentOutput":"1.042,0.898,1.99",
-	"steadyCurrent":"1.056,0.696,1.22"
+	"steadyCurrent":"0.8,0.52,0.4"
 	}
  ], 
  "Scale":1,
