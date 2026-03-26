@@ -11,7 +11,7 @@
      <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
      <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
      <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
-     <Action name="Decoder_Connect" ID="Decoder_Connect"/>
+     <!-- <Action name="Decoder_Connect" ID="Decoder_Connect"/> -->
     </Parallel>
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>
     <Action name="AA_Connect_Collimator" ID="AA_Connect_Collimator"/>
@@ -55,7 +55,7 @@
        </IfThenElse>
        <Action name="AA_Dut_AdjustLevel" ID="AA_Dut_AdjustLevel"/>
        <Action name="AA_Dut_Ranging" ID="AA_Dut_Ranging"/>
-       <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="0" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/FAT_GRR/{cur_data}_MetricsTest/" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF-1_OQC"/>
+       <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="0" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/FAT_GRR/{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF-1_OQC"/>
        <Action name="AA_Dut_Align_EntrancePupil" ID="AA_Dut_Align_EntrancePupil"/>
       </Sequence>
      </Sequence>

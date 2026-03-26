@@ -54,6 +54,9 @@
         <Action name="System_InputTips" ID="System_InputTips" tip="Decoder SN failed, Please manually input the DUT serial number !" param="serial_number" is_lable_visual="1" text_key="dutid"/>
        </IfThenElse>
        <Action name="AA_Dut_AdjustLevel" ID="AA_Dut_AdjustLevel"/>
+       <Action name="AA_Dut_Ranging" ID="AA_Dut_Ranging"/>
+       <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="1" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/FAT_GRR/{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF-1_OQC"/>
+       <Action name="AA_Dut_Align_EntrancePupil" ID="AA_Dut_Align_EntrancePupil"/>
       </Sequence>
      </Sequence>
     </For>

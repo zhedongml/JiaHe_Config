@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+ <BehaviorTree ID="BehaviorTree">
+  <!-- Add nodes here -->
+  <Action name="AA_Dut_Align_EyeBox" ID="AA_Dut_Align_EyeBox" eyebox_id="3"/>
+ </BehaviorTree>
+</root>
