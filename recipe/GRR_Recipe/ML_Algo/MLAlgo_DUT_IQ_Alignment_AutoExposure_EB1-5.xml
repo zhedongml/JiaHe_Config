@@ -11,7 +11,7 @@
      <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
      <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
      <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
-     <Action name="Decoder_Connect" ID="Decoder_Connect"/>
+     <!-- <Action name="Decoder_Connect" ID="Decoder_Connect"/> -->
      <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
     </Parallel>
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>
@@ -28,7 +28,7 @@
     </Parallel>
    </Sequence>
    <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="0"/>
-   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
+   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="30" dut_y="30" dut_z="10" imaging_x="30" imaging_y="30" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
    <!-- blackboard init -->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.9032"/>
@@ -44,7 +44,7 @@
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="convert_method" value="1"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nameRule" value="#LightSource#_#Pattern#_#EyeboxID#_#ColorFilter#_#NDFilter#"/>
    <!-- IQ init -->
-   <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="3" key="eyeboxids"/>
+   <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="1,2,3,4,5" key="eyeboxids"/>
    <Action name="IQ_Metrics_CreateDBTable" ID="IQ_Metrics_CreateDBTable"/>
    <Action name="Colorimeter_Camera_StopGrabbing" ID="Colorimeter_Camera_StopGrabbing"/>
    <Action name="Colorimeter_Camera_SetBinningSelector" ID="Colorimeter_Camera_SetBinningSelector" binning_selector="Logic"/>
@@ -115,25 +115,17 @@
         <Action name="IQ_UpdateFixExposureTimeConfig" ID="IQ_UpdateFixExposureTimeConfig"/>
         <SequenceStar name="SequenceStar">
          <Parallel name="Parallel">
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOV"/> -->
           <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOVOffset"/>
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="Rotation"/> -->
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="GridDistortion"/> -->
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="CheckerContrast"/> -->
           <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="GridDenseMTF"/>
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LuminanceRolloff"/> -->
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="ColorUniformity"/> -->
           <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LateralColor"/>
          </Parallel>
          <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/>
         </SequenceStar>
-        <!-- <Action name="AutoDP_SubmitTask" ID="AutoDP_SubmitTask" sourceImageDir="{dut_measure_folder}" resultSaveDir="{root_folder}"/> -->
        </Sequence>
       </Parallel>
      </Sequence>
     </For>
    </Sequence>
-   	<!-- <Action name="AutoDP_WaitTask" ID="AutoDP_WaitTask"/> -->
    <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
   </Sequence>
  </BehaviorTree>

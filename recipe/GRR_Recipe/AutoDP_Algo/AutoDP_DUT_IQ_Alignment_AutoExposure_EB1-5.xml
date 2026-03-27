@@ -27,6 +27,7 @@
      <Action name="Colorimeter_LoadCalibrationData" ID="Colorimeter_LoadCalibrationData" aperture="{aperture}" binning="1" colorfilter_list="X,Y,Z,Clear" ndfliter_list="ND0" lightsource_list="R,G,B" is_load_dark="1" is_load_colorshift="1" is_load_ffc="1" is_load_distortion="1" is_load_exposure="1" is_load_fliprotation="1" is_load_luminance="1" is_load_fourcolor="0"/>
     </Parallel>
    </Sequence>
+   <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="1"/>
    <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
    <!-- blackboard init -->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
@@ -115,21 +116,7 @@
        <Sequence name="Sequence">
         <Action name="Colorimeter_WaitForCaptureEnd" ID="Colorimeter_WaitForCaptureEnd" timeout="20"/>
         <Action name="IQ_UpdateFixExposureTimeConfig" ID="IQ_UpdateFixExposureTimeConfig"/>
-        <SequenceStar name="SequenceStar">
-         <Parallel name="Parallel">
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOV"/> -->
-          <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOVOffset"/>
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="Rotation"/> -->
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="GridDistortion"/> -->
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="CheckerContrast"/> -->
-          <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="GridDenseMTF"/>
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LuminanceRolloff"/> -->
-          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="ColorUniformity"/> -->
-          <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LateralColor"/>
-         </Parallel>
-         <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/>
-        </SequenceStar>
-        <!-- <Action name="AutoDP_SubmitTask" ID="AutoDP_SubmitTask" sourceImageDir="{dut_measure_folder}" resultSaveDir="{root_folder}"/> -->
+        <Action name="AutoDP_SubmitTask" ID="AutoDP_SubmitTask" sourceImageDir="{dut_measure_folder}" resultSaveDir="{root_folder}"/>
        </Sequence>
       </Parallel>
      </Sequence>
