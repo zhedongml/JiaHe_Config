@@ -6,7 +6,7 @@
         "unit": "deg",
         "color": [ "G" ],
         "imageType": 1,
-        "images": [ "$color$_grid_$eyeboxId$_Clear_ND3" ],
+        "images": [ "$color$_grid_$eyeboxId$_Clear" ],
         "suffix": [ "X", "Y" ],
         "logheader": "CRA_$color$_$suffix$_0$eyeboxId$Eyebox(Arcmin)",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
@@ -18,7 +18,7 @@
         "unit": "deg",
         "color": [ "R", "G", "B" ],
         "imageType": 1,
-        "images": [ "$color$_solid_$eyeboxId$_Y_ND3" ],
+        "images": [ "$color$_solid_$eyeboxId$_Y" ],
         "suffix": [ "X", "Y" ],
         "logheader": "FOV_$color$_$suffix$_0$eyeboxId$Eyebox(deg)",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
@@ -31,7 +31,7 @@
         "unit": "deg",
         "color": [ "G" ],
         "imageType": 1,
-        "images": [ "$color$_grid_$eyeboxId$_Clear_ND3" ],
+        "images": [ "$color$_grid_$eyeboxId$_Clear" ],
         "logheader": "Rotation_W/O_0.9deg_Offset_$color$_0$eyeboxId$Eyebox(deg)",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
       }
@@ -41,7 +41,7 @@
         "unit": "%",
         "color": [ "G" ],
         "imageType": 1,
-        "images": [ "$color$_grid_$eyeboxId$_Clear_ND3" ],
+        "images": [ "$color$_grid_$eyeboxId$_Clear" ],
         "suffix": [ "Mean" ],
         "logheader": "Distortion%_$color$_$suffix$_0$eyeboxId$Eyebox",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
@@ -53,7 +53,7 @@
         "unit": "%",
         "color": [ "R", "G", "B" ],
         "imageType": 1,
-        "images": [ "$color$_solid_$eyeboxId$_Y_ND3" ],
+        "images": [ "$color$_solid_$eyeboxId$_Y" ],
         "suffix": ["uniformity", "P5", "P50", "P95" ],
         "logheader": "IQTU_Rolloff_$color$_$suffix$_0$eyeboxId$Eyebox",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
@@ -66,7 +66,7 @@
         "color": [ "R", "G", "B" ],
         "imageType": 1,
         "images": [
-          "$color$_2deg_Checker_$eyeboxId$_Clear_ND3"
+          "$color$_2deg_Checker_$eyeboxId$_Clear"
         ],
         "suffix": [ "meanCR"],
         "logheader": "CheckerContrast_$color$_$suffix$_0$eyeboxId$Eyebox",
@@ -79,7 +79,7 @@
         "dispaly": false,
         "unit": "",
         "color": [ "R", "G", "B" ],
-        "images": [ "Raw/$color$_grid_$eyeboxId$_Clear_ND3_Raw" ],
+        "images": [ "$color$_grid_$eyeboxId$_Clear" ],
         "suffix": [ "HorAvg_6.25", "VerAvg_6.25", "HorMin_6.25", "VerMin_6.25", "HorAvg_12.5", "VerAvg_12.5", "HorMin_12.5", "VerMin_12.5" ],
         "logheader": "GridDenseMTF_$color$_Y_$suffix$_0$eyeboxId$Eyebox",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
@@ -121,9 +121,9 @@
         "color": [ "R" ],
         "imageType": 1,
         "images": [
-          "R_grid_$eyeboxId$_Clear_ND3",
-          "G_grid_$eyeboxId$_Clear_ND3",
-          "B_grid_$eyeboxId$_Clear_ND3"
+          "R_grid_$eyeboxId$_Clear",
+          "G_grid_$eyeboxId$_Clear",
+          "B_grid_$eyeboxId$_Clear"
         ],
         "suffix": [ "Maxdis(Arcmin)", "Meandis(Arcmin)", "disRG(Arcmin)", "disRB(Arcmin)", "disGB(Arcmin)"],
         "logheader": "LateralColor_$suffix$_0$eyeboxId$Eyebox(Arcmin)",
@@ -150,15 +150,15 @@
         "color": [ "R" ],
         "imageType": 1,
         "images": [
-          "R_solid_$eyeboxId$_X_ND3",
-          "R_solid_$eyeboxId$_Y_ND3",
-          "R_solid_$eyeboxId$_Z_ND3",
-          "G_solid_$eyeboxId$_X_ND3",
-          "G_solid_$eyeboxId$_Y_ND3",
-          "G_solid_$eyeboxId$_Z_ND3",
-          "B_solid_$eyeboxId$_X_ND3",
-          "B_solid_$eyeboxId$_Y_ND3",
-          "B_solid_$eyeboxId$_Z_ND3"
+          "R_solid_$eyeboxId$_X",
+          "R_solid_$eyeboxId$_Y",
+          "R_solid_$eyeboxId$_Z",
+          "G_solid_$eyeboxId$_X",
+          "G_solid_$eyeboxId$_Y",
+          "G_solid_$eyeboxId$_Z",
+          "B_solid_$eyeboxId$_X",
+          "B_solid_$eyeboxId$_Y",
+          "B_solid_$eyeboxId$_Z"
         ],
         "logheader": "dE_00_C_Global_FFOV_median_0$eyeboxId$Eyebox,dE_00_C_Global_FFOV_p95_0$eyeboxId$Eyebox,dE_00_freqMB_FFOV_median_0$eyeboxId$Eyebox,dE_00_freqMB_FFOV_p95_0$eyeboxId$Eyebox,dE_00_freqHB_FFOV_median_0$eyeboxId$Eyebox,dE_00_freqHB_FFOV_p95_0$eyeboxId$Eyebox",
         "initlogheader": "dE_00_C_Global_FFOV_median,dE_00_C_Global_FFOV_p[95],dE_00_freqMB_FFOV_median,dE_00_freqMB_FFOV_p[95],dE_00_freqHB_FFOV_median,dE_00_freqHB_FFOV_p[95]",

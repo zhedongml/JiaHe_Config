@@ -1,7 +1,7 @@
 {
   "system": {
     "pixel_size": 3.45e-3,
-    "FocalLength": 40.926,
+    "FocalLength": 40,
     "W_opticalcenter": [ 6688, 4764 ],
     "ROI": [ 0, 0, -1, 1 ],
     "rotaionAngle": 0,

@@ -11,13 +11,15 @@
      <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
      <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
      <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
-     <Action name="Decoder_Connect" ID="Decoder_Connect"/>
+     <!-- <Action name="Decoder_Connect" ID="Decoder_Connect"/> -->
      <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
     </Parallel>
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>
     <Action name="AA_Connect_Collimator" ID="AA_Connect_Collimator"/>
     <Action name="AA_Connect_Keyence" ID="AA_Connect_Keyence"/>
     <Action name="Colorimeter_Connect_All_Async" ID="Colorimeter_Connect_All_Async"/>
+	<Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
+	<Action name="IQ_UpdateFlipRotation" ID="IQ_UpdateFlipRotation"/>
     <Parallel name="Parallel">
      <!-- IS connect & colorimeter load -->
      <Action name="IS_Connect" ID="IS_Connect"/>
@@ -25,9 +27,7 @@
      <Action name="Colorimeter_LoadCalibrationData" ID="Colorimeter_LoadCalibrationData" aperture="{aperture}" binning="1" colorfilter_list="X,Y,Z,Clear" ndfliter_list="ND0" lightsource_list="R,G,B" is_load_dark="1" is_load_colorshift="1" is_load_ffc="1" is_load_distortion="1" is_load_exposure="1" is_load_fliprotation="1" is_load_luminance="1" is_load_fourcolor="0"/>
     </Parallel>
    </Sequence>
-   <!-- alignment init -->
-   <Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
-   <!-- <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/> -->
+   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
    <!-- blackboard init -->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.9032"/>
