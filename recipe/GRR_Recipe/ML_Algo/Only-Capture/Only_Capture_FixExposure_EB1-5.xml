@@ -4,7 +4,7 @@
   <!-- Add nodes here -->
   <Sequence name="Sequence">
    <!-- system init -->
-   <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/>
+   <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/> -->
    <!-- devices connect -->
    <Sequence name="Sequence">
     <Parallel name="Parallel">
