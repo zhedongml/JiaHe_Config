@@ -4,22 +4,21 @@
   <!-- Add nodes here -->
   <Sequence name="Sequence">
    <!-- system init -->
-   <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/>
    <!-- devices connect -->
    <Sequence name="Sequence">
     <Parallel name="Parallel">
      <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
      <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
      <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
-     <!-- <Action name="Decoder_Connect" ID="Decoder_Connect"/> -->
+     <Action name="Decoder_Connect" ID="Decoder_Connect"/>
      <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
     </Parallel>
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>
     <Action name="AA_Connect_Collimator" ID="AA_Connect_Collimator"/>
     <Action name="AA_Connect_Keyence" ID="AA_Connect_Keyence"/>
     <Action name="Colorimeter_Connect_All_Async" ID="Colorimeter_Connect_All_Async"/>
-    <Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
-    <Action name="IQ_UpdateFlipRotation" ID="IQ_UpdateFlipRotation"/>
+	<Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
+	<Action name="IQ_UpdateFlipRotation" ID="IQ_UpdateFlipRotation"/>
     <Parallel name="Parallel">
      <!-- IS connect & colorimeter load -->
      <Action name="IS_Connect" ID="IS_Connect"/>
@@ -27,6 +26,7 @@
      <Action name="Colorimeter_LoadCalibrationData" ID="Colorimeter_LoadCalibrationData" aperture="{aperture}" binning="1" colorfilter_list="X,Y,Z,Clear" ndfliter_list="ND0" lightsource_list="R,G,B" is_load_dark="1" is_load_colorshift="1" is_load_ffc="1" is_load_distortion="1" is_load_exposure="1" is_load_fliprotation="1" is_load_luminance="1" is_load_fourcolor="0"/>
     </Parallel>
    </Sequence>
+   <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="0"/>
    <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="30" dut_y="30" dut_z="10" imaging_x="30" imaging_y="30" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
    <!-- blackboard init -->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
@@ -52,7 +52,7 @@
    <!-- alignment/ capture/ algo process -->
    <Sequence name="Sequence">
     <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
-    <Action name="System_Tips" ID="System_Tips" tip="Please check if the prism is in DUT mode ?"/>
+    <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the prism is in DUT mode ?"/> -->
     <For name="For" traverse_params="wafer_dut_num">
      <Sequence name="Sequence">
       <Action name="System_GetForNodeValue1" ID="System_GetForNodeValue1" value_key="cur_wafer_dutID"/>
@@ -73,14 +73,11 @@
        <Action name="AA_Dut_Align_EntrancePupil" ID="AA_Dut_Align_EntrancePupil"/>
       </Sequence>
       <!-- define csv file & dut folder path -->
-      <Action name="IQ_Metrics_CreateDutResultFile" ID="IQ_Metrics_CreateDutResultFile" root_dir="E:\FAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF" csvname="{dutid}_{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all" dut_folder="dut_measure_folder" root_folder="root_folder"/>
+      <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:\FAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF" csvname="{dutid}_{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all"/>
       <For name="For" traverse_params="{eyeboxids}">
        <Sequence name="Sequence">
         <Action name="System_GetForNodeValue1" ID="System_GetForNodeValue1" value_key="cur_eb"/>
-        <Parallel name="Parallel">
-         <Action name="AA_Dut_Align_EyeBox" ID="AA_Dut_Align_EyeBox" eyebox_id="{cur_eb}"/>
-         <Action name="IQ_Metrics_CreateEyeboxResultFile" ID="IQ_Metrics_CreateEyeboxResultFile" root_dir="{dut_measure_folder}\{dutid}_EB{cur_eb}_{cur_datatime}"/>
-        </Parallel>
+        <Action name="AA_Dut_Align_EyeBox" ID="AA_Dut_Align_EyeBox" eyebox_id="{cur_eb}"/>
         <!-- capture module -->
         <For name="For" traverse_params="R,G,B;{ISphere_scale_R},{ISphere_scale_G},{ISphere_scale_B}">
          <Sequence name="Sequence">
@@ -90,7 +87,7 @@
            <Action name="Colorimeter_Motion_SetLightFocus" ID="Colorimeter_Motion_SetLightFocus" color="{color}"/>
            <Action name="Reticle_1D_Change" ID="Reticle_1D_Change" reticle_name="Grid"/>
           </Parallel>
-		  <!-- solid pattern (R&G&B) -->
+          <!-- solid pattern (R&G&B) -->
           <!-- <Action name="Colorimeter_Capture_LuminanceImage_Async" ID="Colorimeter_Capture_LuminanceImage_Async" aperture="{aperture}" dutid="{dutid}" eyeboxid="{cur_eb}" binning="{binning_4}" nd_filter="{nd_select}" color_filter="X" light_source="{color}" image_type="solid" is_auto_et="{is_auto_exposure}" exposure_time="{exposure_init_time}" et_factor="" is_convert_16bit="{is_convert_16bit}" convert_method="{convert_method}" save_raw_image="1" save_calibration_image="0" is_hdr="0" max_exposure_time="" is_exposure_check="0" nameRule="{nameRule}"/> -->
           <!-- <Action name="Colorimeter_Capture_LuminanceImage_Async" ID="Colorimeter_Capture_LuminanceImage_Async" aperture="{aperture}" dutid="{dutid}" eyeboxid="{cur_eb}" binning="{binning_4}" nd_filter="{nd_select}" color_filter="Y" light_source="{color}" image_type="solid" is_auto_et="{is_auto_exposure}" exposure_time="{exposure_init_time}" et_factor="" is_convert_16bit="{is_convert_16bit}" convert_method="{convert_method}" save_raw_image="1" save_calibration_image="0" is_hdr="0" max_exposure_time="" is_exposure_check="0" nameRule="{nameRule}"/> -->
           <!-- <Action name="Colorimeter_Capture_LuminanceImage_Async" ID="Colorimeter_Capture_LuminanceImage_Async" aperture="{aperture}" dutid="{dutid}" eyeboxid="{cur_eb}" binning="{binning_4}" nd_filter="{nd_select}" color_filter="Z" light_source="{color}" image_type="solid" is_auto_et="{is_auto_exposure}" exposure_time="{exposure_init_time}" et_factor="" is_convert_16bit="{is_convert_16bit}" convert_method="{convert_method}" save_raw_image="1" save_calibration_image="0" is_hdr="0" max_exposure_time="" is_exposure_check="0" nameRule="{nameRule}"/> -->
@@ -110,13 +107,24 @@
         </For>
        </Sequence>
       </For>
+      <!-- algo module -->
+      <Parallel name="Parallel">
+       <Action name="IS_CloseAllShutter" ID="IS_CloseAllShutter"/>
+       <Sequence name="Sequence">
+        <Action name="Colorimeter_WaitForCaptureEnd" ID="Colorimeter_WaitForCaptureEnd" timeout="20"/>
+        <!-- <SequenceStar name="SequenceStar"> -->
+         <!-- <Parallel name="Parallel"> -->
+          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOVOffset"/> -->
+          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="GridDenseMTF"/> -->
+          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LateralColor"/> -->
+         <!-- </Parallel> -->
+         <!-- <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/> -->
+        <!-- </SequenceStar> -->
+       </Sequence>
+      </Parallel>
      </Sequence>
     </For>
    </Sequence>
-   <!-- <Action name="AutoDP_WaitTask" ID="AutoDP_WaitTask"/> -->
-   <Action name="Colorimeter_WaitForCaptureEnd" ID="Colorimeter_WaitForCaptureEnd" timeout="20"/>
-   <Action name="IS_CloseAllShutter" ID="IS_CloseAllShutter"/>
-   <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/>
    <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
   </Sequence>
  </BehaviorTree>

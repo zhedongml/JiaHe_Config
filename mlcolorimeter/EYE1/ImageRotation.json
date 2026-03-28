@@ -3,7 +3,7 @@
 	"DUT_LeftEye":{
 		"FlippingX": false,
         "FlippingY": false,
-        "Rotation": 0
+        "Rotation": 1.36
 	},
 	"DUT_RightEye":{
 		"FlippingX": false,

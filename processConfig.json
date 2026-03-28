@@ -71,6 +71,78 @@
 				"dx":-0.2,
 				"dy":0		
 			}
+		},
+		{
+			"name": "Large_Left",
+			"projection": {
+				"projectionTiptilt": {
+					"dX": -10.49,
+					"dY": 0.04
+				},
+				"projectionOffsetRelativeToMV": {
+					"offsetX": -125.66,
+					"offsetY": -73.23
+				}
+			},
+			"imaging": {
+				"imagingTiptilt": {
+					"dX": 10.1997,
+					"dY": 0.44
+				},
+				"imagingOffsetRelativeToMV": {
+					"offsetX": 16.82,
+					"offsetY": -57.04
+				},
+				"eyeBoxCenterKeyenceValue":32.5946,
+				"fixedPos": {
+					"X": 64.382,
+					"Y": -11.925,
+					"Z": 38.816
+				}
+			},
+			"dut":{
+				"preTipiltAngle":{
+					"dX": 0.2,
+					"dY": 0.12
+				}
+			},
+			"Anticollision": {
+				"dutPreTipiltDxMax":0.5,
+				"dutPreTipiltDxMin":-0.5,
+				"dutPreTipiltDyMax":0.7,
+				"dutPreTipiltDyMin":-0.7,
+				"dutMotorAngleMax": 1,
+				"dutMotorAngleMin": 0.7,
+				"inputAlignmentMotorPosXMax": -64,
+				"inputAlignmentMotorPosXMin": -68,
+				"inputAlignmentMotorPosYMax": 0,
+				"inputAlignmentMotorPosYMin": -2,
+				"rangingMax": 34,
+				"rangingMin": 30
+			},
+			"LoadDut": {
+				"X": -5.78,
+				"Y": 1.658,
+				"Z": 150
+			},
+			"Ranging": {
+				"X": 64.222,
+				"Y": -98.004,
+				"Z": 145.435
+			},
+			"DutParallelAdjustment": {
+				"X": -29.262,
+				"Y": -83.403,
+				"Z": 150
+			},
+			"AlignOffset":{
+				"dx":0.64,
+				"dy":0.28		
+			},
+			"CraftOffset":{		
+				"dx":-0.2,
+				"dy":0		
+			}
 		}
 	]
 }

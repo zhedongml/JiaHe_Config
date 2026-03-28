@@ -68,10 +68,10 @@
 			"eyeType": "Left",
 			"walkoffDistance": 8,
 			"eyeBoxPupil": 3,
-			"fiducialZMotorPos": 0,
+			"fiducialZMotorPos": 41,
 			"originPointMotorPositionInMV": {
-				"x": 0,
-				"y": 0
+				"x": 42.22,
+				"y": -7.342
 			},
 			"fiducialOffset": [
 				{
@@ -131,7 +131,7 @@
 			"eyeType": "Right",
 			"walkoffDistance": 8,
 			"eyeBoxPupil": 3,
-			"fiducialZMotorPos":40,
+			"fiducialZMotorPos":41,
 			"originPointMotorPositionInMV": {
 				"x": 42.45,
 				"y": -5.223
