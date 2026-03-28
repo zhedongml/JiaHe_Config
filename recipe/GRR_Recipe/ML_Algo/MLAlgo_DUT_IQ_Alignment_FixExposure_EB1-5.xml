@@ -4,14 +4,14 @@
   <!-- Add nodes here -->
   <Sequence name="Sequence">
    <!-- system init -->
-   <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/>
+   <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/> -->
    <!-- devices connect -->
    <Sequence name="Sequence">
     <Parallel name="Parallel">
      <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
      <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
      <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
-     <!-- <Action name="Decoder_Connect" ID="Decoder_Connect"/> -->
+     <Action name="Decoder_Connect" ID="Decoder_Connect"/>
      <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
     </Parallel>
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>

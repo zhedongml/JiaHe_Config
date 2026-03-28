@@ -4,7 +4,7 @@
   <!-- Add nodes here -->
   <Sequence name="Sequence">
    <!-- system init -->
-   <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/>
+   <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/> -->
    <!-- devices connect -->
    <Sequence name="Sequence">
     <Parallel name="Parallel">
@@ -28,7 +28,7 @@
     </Parallel>
    </Sequence>
    <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="0"/>
-   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
+   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="30" dut_y="30" dut_z="10" imaging_x="30" imaging_y="30" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
    <!-- blackboard init -->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.9032"/>
@@ -38,8 +38,8 @@
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="xyzc_select" value="Clear"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="binning_4" value="4"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="binning_1" value="1"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="1"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="exposure_init_time" value="1000"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="0"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="exposure_init_time" value=""/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_convert_16bit" value="0"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="convert_method" value="1"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nameRule" value="#LightSource#_#Pattern#_#EyeboxID#_#ColorFilter#_#NDFilter#"/>
@@ -49,6 +49,7 @@
    <Action name="Colorimeter_Camera_StopGrabbing" ID="Colorimeter_Camera_StopGrabbing"/>
    <Action name="Colorimeter_Camera_SetBinningSelector" ID="Colorimeter_Camera_SetBinningSelector" binning_selector="Logic"/>
    <Action name="Colorimeter_Camera_SetBinningMode" ID="Colorimeter_Camera_SetBinningMode" binning_mode="Average"/>
+   <Action name="IQ_LoadFixExposureTime" ID="IQ_LoadFixExposureTime" is_match_eb="0"/>
    <!-- alignment/ capture/ algo process -->
    <Sequence name="Sequence">
     <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
@@ -112,7 +113,6 @@
        <Action name="IS_CloseAllShutter" ID="IS_CloseAllShutter"/>
        <Sequence name="Sequence">
         <Action name="Colorimeter_WaitForCaptureEnd" ID="Colorimeter_WaitForCaptureEnd" timeout="20"/>
-        <Action name="IQ_UpdateFixExposureTimeConfig" ID="IQ_UpdateFixExposureTimeConfig"/>
         <SequenceStar name="SequenceStar">
          <Parallel name="Parallel">
           <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOV"/> -->

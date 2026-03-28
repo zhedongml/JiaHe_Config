@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+ <BehaviorTree ID="BehaviorTree">
+  <!-- Add nodes here -->
+  <Sequence name="Sequence">
+     <Action name="System_Date" ID="System_Date" date_key="cur_data"/>
+   <Action name="System_DateTime" ID="System_DateTime" date_time_key="cur_datatime"/>
+   <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="0"/>
+   <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="1,2,3,4,5" key="eyeboxids"/>
+   <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:\SAT_GRR\{cur_data}_MetricsTest" dut_seq="COT_{cur_datatime}_WG_IQT-MTF-1_OQC" csvname="{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all"/>
+   <Action name="IQ_UpdateFixExposureTimeConfig" ID="IQ_UpdateFixExposureTimeConfig"/>
+  </Sequence>
+ </BehaviorTree>
+</root>
