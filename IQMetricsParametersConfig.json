@@ -1,39 +1,44 @@
 {
   "system": {
     "pixel_size": 3.45e-3,
-    "FocalLength": 39.8999,
-    "W_opticalcenter": [ 6691, 4765 ],
-    "ROI": [ 3420, 2172, 6360, 5664 ],
+    "FocalLength": 40,
+    "W_opticalcenter": [ 6688, 4764 ],
+    "ROI": [ 0, 0, -1, 1 ],
     "rotaionAngle": 0,
-    "ResizeNum": 4,
-    "DUTRotationAngle": 1.9615
+    "GridResizeNum": 4,
+    "SolidResizeNum": 4,
+    "IsUseNewMethod": 1,
+    "SystemRotationError": 0,
+    "zoneBRect": [ 1.15, 3, 17.5, 9.5 ],
+    "CheckerSize": [ 26, 21 ],
+    "GridSize": [ 34, 27 ],
+    "SLBRotationAngle": 0, 
+    "DUTRotationAngle": 0,
+    "SLBFlipLR": false, 
+    "DUTFlipLR": false,
+    "SLBFlipUD": false, 
+    "DUTFlipUD": false
   },
   "denseMTF": {
     "denseMTFWidth": 330,
     "denseMTFHeight": 110
   },
   "GridMTF": {
-    "gridMTFWidth": 100,
-    "gridMTFHeight": 100
+    "gridMTFWidth": 330,
+    "gridMTFHeight": 110
   },
 
   "CrossMTF": {
-    "crossMTFWidth": 320,
-    "crossMTFHeight": 50,
-    "ROI_center_offset": 80,
-    "ROI_center_offset_big": 400,
-    "crossMTFWidthBig": 1630,
-    "crossMTFHeightBig": 350
+    "crossMTFWidth": 700,
+    "crossMTFHeight": 350
   },
   "mtfFreq": {
-    "mtfFreq": 10.625,
-    "mtfFreq2": 21.25
+    "mtfFreq": 6.25,
+    "mtfFreq2": 12.5
   },
   "distortion": {
-    "distortonTheHor": 12.75,
-    "distortonTheVer": 12.75,
-    "distortonTheHorBig": 58,
-    "distortonTheVerBig": 44
+    "distortonTheHor": 49.5,
+    "distortonTheVer": 39
   },
   "ghostROI": {
     "ghostRectVec": []
@@ -41,14 +46,15 @@
   "flare": {
     "avg_width": 5,
     "flareAngle": 5,
-    "xsecWidth": 3,
+    "flareRotationAngle": 0,
+    "xsecWidth": 4,
     "xsecVec": [ 2, 4 ]
   },
   "checkerContrast": {
     "crArea": 0.5
   },
   "RollOff": {
-    "RolloffAreaRatio": 0.81,
+    "RolloffAreaRatio": 0.9,
     "RolloffLengthH": 21.25,
     "RolloffLengthV": 16.25,
     "RolloffWidth": 10
@@ -58,6 +64,6 @@
   },
   "SequentialContrast": {
     "zoneARadius": 5,
-    "LuminaceActive": 0.81
+    "LuminaceActive": 0.9
   }
 }

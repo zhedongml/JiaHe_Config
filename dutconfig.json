@@ -1,6 +1,6 @@
 {
 	"NewDUT": [
-		{
+	{
 			"name": "Small_Right",
 			"eyeType": "Right",
 			"walkoffDistance": 8,
@@ -68,10 +68,10 @@
 			"eyeType": "Left",
 			"walkoffDistance": 8,
 			"eyeBoxPupil": 3,
-			"fiducialZMotorPos": 0,
+			"fiducialZMotorPos": 36,
 			"originPointMotorPositionInMV": {
-				"x": 0,
-				"y": 0
+				"x": 42.866,
+				"y": -5.551
 			},
 			"fiducialOffset": [
 				{
@@ -131,10 +131,10 @@
 			"eyeType": "Right",
 			"walkoffDistance": 8,
 			"eyeBoxPupil": 3,
-			"fiducialZMotorPos": 90.8,
+			"fiducialZMotorPos":36,
 			"originPointMotorPositionInMV": {
-				"x": 37.495,
-				"y": 57.5751
+				"x": 42.278,
+				"y": -3.774
 			},
 			"fiducialOffset": [
 				{

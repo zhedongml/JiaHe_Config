@@ -1,25 +1,25 @@
 {
   "SLB_LoadDutXYZPosition": {
     "X": -35.778,
-    "Y": 98.5,
+    "Y": 99,
     "Z": 150
   },
   "SLB_LoadImageXYZPosition": {
-    "X": 97.384,
-    "Y": 23.316,
-    "Z": 0
+    "X": 67.005,
+    "Y": 95.856,
+    "Z": -2
   },
   "SLB_ProjectionTiptilt": {
-    "dX": 0.1785,
-    "dY": 0.0213
+    "dX": 10.2747,
+    "dY": -0.0201
   },
   "SLB_ImagingTiptilt": {
-    "dX": 0.095,
-    "dY": 0.095
+    "dX": -10.0565,
+    "dY": 0.323
   },
-    "SLB_ImagingXYZPosition": {
-    "X": -6.8653,
-    "Y": 39.8263,
-    "Z": 34.15
+  "SLB_ImagingXYZPosition": {
+    "X": 55.2019,
+    "Y": -24.1438,
+    "Z": 2.9945
   }
 }

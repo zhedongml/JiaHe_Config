@@ -83,11 +83,6 @@
 					"Channel": 3,
 					"Name": "Clear",
 					"Enum": "Clear"
-				},
-				{
-					"Channel": 4,
-					"Name": "Block",
-					"Enum": "Block"
 				}
 			],
 			"IOCommand": {

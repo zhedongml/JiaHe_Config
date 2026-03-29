@@ -2,9 +2,9 @@
  "HostIP":"127.0.0.1", 
  "Port":3434, 
  "SpectraExe":"C:/Program Files (x86)/Labsphere/HELIOSense/HELIOSense.exe",
- "RedCalibrationFactor":3.458e9, 
- "GreenCalibrationFactor":7.896e9, 
- "BlueCalibrationFactor":1.516e9,
+ "RedCalibrationFactor":3.162e9, 
+ "GreenCalibrationFactor":7.555e9, 
+ "BlueCalibrationFactor":1.499e9,
  "UseShutter":true,
  "DeviceIndex":{
 	 "R":1,
@@ -12,9 +12,9 @@
 	 "B":0
  },
  "ShutterIndex":{
-	 "R":1,
-	 "G":0,
-	 "B":2
+	 "R":2,
+	 "G":1,
+	 "B":0
  },  
  "Voltage":{
 	 "R":300,
@@ -34,30 +34,30 @@
  },
  "Solutions":[
 	{
-	"name":"Red_1.042A_627nm", 
+	"name":"Red_1.481A_622nm", 
 	"index":1,
 	"luminance":0,
 	"luminanceMax":900000,
 	"colorFocus": "R",
-	"currentOutput":"1.042",
+	"currentOutput":"1.481",
 	"steadyCurrent":"0.8"
  	}, 
 	{
- 	"name":"Green_0.898A_530nm", 
+ 	"name":"Green_0.934A_521nm", 
  	"index":2,
 	"luminance":0,
 	"luminanceMax":679000,
 	"colorFocus": "G",
-	"currentOutput":"0.898",
+	"currentOutput":"0.934",
 	"steadyCurrent":"0.52"
  	},  
  	{
-	"name":"Blue_1.99A_465nm", 
+	"name":"Blue_1.282A_468nm", 
 	"index":3,
 	"luminance":0,
 	"luminanceMax":430000,
 	"colorFocus": "B",
-	"currentOutput":"1.99",
+	"currentOutput":"1.282",
 	"steadyCurrent":"0.4"
  	}, 
 	{
@@ -66,22 +66,22 @@
 	"luminance":0,
 	"luminanceMax":1088000,
 	"colorFocus": "W",
-	"currentOutput":"1.042,0.898,1.99",
+	"currentOutput":"1.481,0.934,1.282",
 	"steadyCurrent":"0.8,0.52,0.4"
 	}
  ], 
  "Scale":1,
- "TestInfoR":"IntergratingSphere: Color=Red, current=1.042A, PeakWavelength=627nm;",
- "TestInfoG":"IntergratingSphere: Color=Green, current=0.898A, PeakWavelength=530nm;",
- "TestInfoB":"IntergratingSphere: Color=Blue, current=1.99A, PeakWavelength=465nm",
+ "TestInfoR":"IntergratingSphere: Color=Red, current=1.056A, PeakWavelength=623nm;",
+ "TestInfoG":"IntergratingSphere: Color=Green, current=0.696A, PeakWavelength=519nm;",
+ "TestInfoB":"IntergratingSphere: Color=Blue, current=1.22A, PeakWavelength=469nm",
  "CurrentSetting":{
-	 "ResultJudge": true,
-	 "WaitMilliseconds":2000
+	 "ResultJudge": false,
+	 "WaitMilliseconds":10
  },
  "SteadyCurrentCoefficient":{
 	 "useCoefficient":false,
-	 "R":0.768,
-	 "G":0.579,
-     "B":0.201
+	 "R":0.54,
+	 "G":0.557,
+     "B":0.312
  }
 }
