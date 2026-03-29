@@ -108,9 +108,9 @@
 			},
 			"Anticollision": {
 				"dutPreTipiltDxMax":0.5,
-				"dutPreTipiltDxMin":-0.5,
+				"dutPreTipiltDxMin":-0.06,
 				"dutPreTipiltDyMax":0.7,
-				"dutPreTipiltDyMin":-0.7,
+				"dutPreTipiltDyMin":-0.06,
 				"dutMotorAngleMax": 1,
 				"dutMotorAngleMin": 0.7,
 				"inputAlignmentMotorPosXMax": -64,
