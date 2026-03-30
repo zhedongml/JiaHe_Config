@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+ <BehaviorTree ID="BehaviorTree">
+  <!-- Add nodes here -->
+  <Sequence name="Sequence">
+   <Action name="System_Date" ID="System_Date" date_key="cur_data"/>
+   <Action name="System_DateTime" ID="System_DateTime" date_time_key="cur_datatime"/>
+   <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="1"/>
+   <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="1,2,3,4,5" key="eyeboxids"/>
+   <Action name="IQ_Metrics_CreateDutResultFile" ID="IQ_Metrics_CreateDutResultFile" root_dir="E:\SAT_GRR\{cur_data}_MetricsTest" dut_seq="cur_datatime}_WG_IQT-MTF" csvname="{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all" dut_folder="dut_measure_folder" root_folder="root_folder"/>
+   <For name="For" traverse_params="{eyeboxids}">
+    <Sequence name="Sequence">
+	 <Action name="System_GetForNodeValue1" ID="System_GetForNodeValue1" value_key="cur_eb"/>
+	 <Action name="IQ_Metrics_CreateEyeboxResultFile" ID="IQ_Metrics_CreateEyeboxResultFile" root_dir="{dut_measure_folder}\EB{cur_eb}_{cur_datatime}"/>   
+    </Sequence>
+   </For>
+   <Action name="IQ_UpdateFixExposureTimeConfig" ID="IQ_UpdateFixExposureTimeConfig"/>
+  </Sequence>
+ </BehaviorTree>
+</root>
