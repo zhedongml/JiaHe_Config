@@ -37,9 +37,9 @@
     <Action name="Colorimeter_LoadCalibrationData" ID="Colorimeter_LoadCalibrationData" aperture="{aperture}" binning="1" colorfilter_list="X,Y,Z,Clear" ndfliter_list="ND3" lightsource_list="R,G,B" is_load_dark="1" is_load_colorshift="1" is_load_ffc="1" is_load_distortion="1" is_load_exposure="1" is_load_fliprotation="1" is_load_luminance="1" is_load_fourcolor="0"/>
    </Parallel>
    <!-- blackboard init-->
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.9032"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_B" value="1.937"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.121"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="1.181"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_B" value="1.7"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nd_select" value="ND3"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="xyzc_select" value="Clear"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="0"/>

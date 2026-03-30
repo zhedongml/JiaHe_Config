@@ -30,9 +30,9 @@
    <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="1"/>
    <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
    <!-- blackboard init -->
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.4272"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.9032"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_B" value="1.937"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.121"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="1.181"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_B" value="1.7"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="fiducial_expo_time" value="4"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nd_select" value="ND0"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="xyzc_select" value="Clear"/>
