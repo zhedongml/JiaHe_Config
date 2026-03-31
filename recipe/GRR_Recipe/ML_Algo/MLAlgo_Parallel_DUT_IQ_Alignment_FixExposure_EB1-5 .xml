@@ -18,8 +18,8 @@
     <Action name="AA_Connect_Collimator" ID="AA_Connect_Collimator"/>
     <Action name="AA_Connect_Keyence" ID="AA_Connect_Keyence"/>
     <Action name="Colorimeter_Connect_All_Async" ID="Colorimeter_Connect_All_Async"/>
-	<Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
-	<Action name="IQ_UpdateFlipRotation" ID="IQ_UpdateFlipRotation"/>
+    <Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
+    <Action name="IQ_UpdateFlipRotation" ID="IQ_UpdateFlipRotation"/>
     <Parallel name="Parallel">
      <!-- IS connect & colorimeter load -->
      <Action name="IS_Connect" ID="IS_Connect"/>
@@ -27,8 +27,8 @@
      <Action name="Colorimeter_LoadCalibrationData" ID="Colorimeter_LoadCalibrationData" aperture="{aperture}" binning="1" colorfilter_list="X,Y,Z,Clear" ndfliter_list="ND0" lightsource_list="R,G,B" is_load_dark="1" is_load_colorshift="1" is_load_ffc="1" is_load_distortion="1" is_load_exposure="1" is_load_fliprotation="1" is_load_luminance="1" is_load_fourcolor="0"/>
     </Parallel>
    </Sequence>
-   <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="1"/>
-   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
+   <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="0"/>
+   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="30" dut_y="30" dut_z="10" imaging_x="30" imaging_y="30" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
    <!-- blackboard init -->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.121"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="1.181"/>
@@ -38,17 +38,19 @@
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="xyzc_select" value="Clear"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="binning_4" value="4"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="binning_1" value="1"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="1"/>
-   <Action name="SetBlackboard" ID="SetBlackboard" output_key="exposure_init_time" value="1000"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_auto_exposure" value="0"/>
+   <Action name="SetBlackboard" ID="SetBlackboard" output_key="exposure_init_time" value=""/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="is_convert_16bit" value="0"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="convert_method" value="1"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="nameRule" value="#LightSource#_#Pattern#_#EyeboxID#_#ColorFilter#_#NDFilter#"/>
    <!-- IQ init -->
    <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="1,2,3,4,5" key="eyeboxids"/>
+   <Action name="IQ_StartParallelCalculate" ID="IQ_StartParallelCalculate" metrics="FOVOffset,GridDenseMTF,LateralColor" eyeboxlist="{eyeboxids}"/>
    <Action name="IQ_Metrics_CreateDBTable" ID="IQ_Metrics_CreateDBTable"/>
    <Action name="Colorimeter_Camera_StopGrabbing" ID="Colorimeter_Camera_StopGrabbing"/>
    <Action name="Colorimeter_Camera_SetBinningSelector" ID="Colorimeter_Camera_SetBinningSelector" binning_selector="Logic"/>
    <Action name="Colorimeter_Camera_SetBinningMode" ID="Colorimeter_Camera_SetBinningMode" binning_mode="Average"/>
+   <Action name="IQ_LoadFixExposureTime" ID="IQ_LoadFixExposureTime" is_match_eb="0"/>
    <!-- alignment/ capture/ algo process -->
    <Sequence name="Sequence">
     <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
@@ -73,14 +75,11 @@
        <Action name="AA_Dut_Align_EntrancePupil" ID="AA_Dut_Align_EntrancePupil"/>
       </Sequence>
       <!-- define csv file & dut folder path -->
-      <Action name="IQ_Metrics_CreateDutResultFile" ID="IQ_Metrics_CreateDutResultFile" root_dir="E:\FAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF" csvname="{dutid}_{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all" dut_folder="dut_measure_folder" root_folder="root_folder"/>
+      <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:\FAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF" csvname="{dutid}_{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all"/>
       <For name="For" traverse_params="{eyeboxids}">
        <Sequence name="Sequence">
         <Action name="System_GetForNodeValue1" ID="System_GetForNodeValue1" value_key="cur_eb"/>
-        <Parallel name="Parallel">
-         <Action name="AA_Dut_Align_EyeBox" ID="AA_Dut_Align_EyeBox" eyebox_id="{cur_eb}"/>
-         <Action name="IQ_Metrics_CreateEyeboxResultFile" ID="IQ_Metrics_CreateEyeboxResultFile" root_dir="{dut_measure_folder}\{dutid}_EB{cur_eb}_{cur_datatime}"/>
-        </Parallel>
+        <Action name="AA_Dut_Align_EyeBox" ID="AA_Dut_Align_EyeBox" eyebox_id="{cur_eb}"/>
         <!-- capture module -->
         <For name="For" traverse_params="R,G,B;{ISphere_scale_R},{ISphere_scale_G},{ISphere_scale_B}">
          <Sequence name="Sequence">
@@ -115,14 +114,23 @@
        <Action name="IS_CloseAllShutter" ID="IS_CloseAllShutter"/>
        <Sequence name="Sequence">
         <Action name="Colorimeter_WaitForCaptureEnd" ID="Colorimeter_WaitForCaptureEnd" timeout="20"/>
-        <Action name="IQ_UpdateFixExposureTimeConfig" ID="IQ_UpdateFixExposureTimeConfig"/>
-        <Action name="AutoDP_SubmitTask" ID="AutoDP_SubmitTask" sourceImageDir="{dut_measure_folder}" resultSaveDir="{root_folder}"/>
+        <!-- <SequenceStar name="SequenceStar"> -->
+         <!-- <Parallel name="Parallel"> -->
+          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="FOVOffset"/> -->
+          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="GridDenseMTF"/> -->
+          <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LateralColor"/> -->
+         <!-- </Parallel> -->
+         <!-- <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/> -->
+        <!-- </SequenceStar> -->
        </Sequence>
+	   <Sequence name="Sequence">
+	    <Action name="IQ_WaitParallelCalculateEnd" ID="IQ_WaitParallelCalculateEnd" timeout="-1"/>
+        <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/>
+	   </Sequence>
       </Parallel>
      </Sequence>
     </For>
    </Sequence>
-   	<!-- <Action name="AutoDP_WaitTask" ID="AutoDP_WaitTask"/> -->
    <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
   </Sequence>
  </BehaviorTree>
