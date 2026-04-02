@@ -106,7 +106,7 @@
        <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="CheckerContrast"/>
        <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="GridDenseMTF"/>
        <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LuminanceRolloff"/>
-       <!-- <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="ColorUniformity"/> -->
+       <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="ColorUniformity"/>
        <Action name="IQ_Metrics_Calculate" ID="IQ_Metrics_Calculate" metrics_name="LateralColor"/>
       </Parallel>
       <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/>

@@ -7,11 +7,13 @@
    <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/> -->
    <!-- devices connect -->
    <Sequence name="Sequence">
+    <Parallel name="Parallel">
      <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
      <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
      <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
      <Action name="Decoder_Connect" ID="Decoder_Connect"/>
      <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
+    </Parallel>
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>
     <Action name="AA_Connect_Collimator" ID="AA_Connect_Collimator"/>
     <Action name="AA_Connect_Keyence" ID="AA_Connect_Keyence"/>
@@ -49,7 +51,7 @@
    <Action name="Colorimeter_Camera_SetBinningMode" ID="Colorimeter_Camera_SetBinningMode" binning_mode="Average"/>
    <!-- alignment/ capture/ algo process -->
    <Sequence name="Sequence">
-    <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
+    <Action name="AA_Dut_InitDUT" ID="AA_Dut_InitDUT"/>
     <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the prism is in DUT mode ?"/> -->
     <For name="For" traverse_params="wafer_dut_num">
      <Sequence name="Sequence">
@@ -59,6 +61,7 @@
       <!-- alignment module -->
       <Sequence name="Sequence">
        <Action name="AA_SetWaferDutId" ID="AA_SetWaferDutId" wafer_dut_id="{cur_wafer_dutID}"/>
+       <Action name="AA_Dut_LoadDUT" ID="AA_Dut_LoadDUT"/>
        <Action name="AA_Dut_QrScanPos" ID="AA_Dut_QrScanPos"/>
        <IfThenElse name="IfThenElse">
         <Action name="Decoder_SN" ID="Decoder_SN" key="dutid"/>
