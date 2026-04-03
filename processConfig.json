@@ -35,10 +35,10 @@
 				}
 			},
 			"Anticollision": {
-				"dutPreTipiltDxMax":0.5,
-				"dutPreTipiltDxMin":0,
-				"dutPreTipiltDyMax":0.5,
-				"dutPreTipiltDyMin":0.1,
+				"dutTipTiltDxMax":0.5,
+				"dutTipTiltDxMin":0,
+				"dutTipTiltDyMax":0.5,
+				"dutTipTiltDyMin":0.1,
 				"dutMotorAngleMax": 1,
 				"dutMotorAngleMin": 0.7,
 				"inputAlignmentMotorPosXMax": -64,
@@ -107,10 +107,10 @@
 				}
 			},
 			"Anticollision": {
-				"dutPreTipiltDxMax":0.5,
-				"dutPreTipiltDxMin":0,
-				"dutPreTipiltDyMax":0.5,
-				"dutPreTipiltDyMin":0.1,
+				"dutTipTiltDxMax":0.5,
+				"dutTipTiltDxMin":0,
+				"dutTipTiltDyMax":0.5,
+				"dutTipTiltDyMin":0.1,
 				"dutMotorAngleMax": 1,
 				"dutMotorAngleMin": 0.7,
 				"inputAlignmentMotorPosXMax": -64,
