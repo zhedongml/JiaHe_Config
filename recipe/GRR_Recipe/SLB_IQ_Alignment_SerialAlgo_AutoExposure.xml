@@ -7,16 +7,14 @@
    <Action name="System_Date" ID="System_Date" date_key="cur_data"/>
    <Action name="System_DateTime" ID="System_DateTime" date_time_key="cur_datatime"/>
    <!--Devices Connect-->
-   <Parallel name="Parallel">
     <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
     <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
     <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
     <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
-   </Parallel>
    <!-- SLB Alignment Init-->
    <Action name="IQ_SetDutID" ID="IQ_SetDutID" id_key="dutid" id_value="SLB"/>
    <Action name="IQ_SetTestState" ID="IQ_SetTestState" is_dut="0" is_update_slb="1" size="" size_key=""/>
-   <!-- <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/> -->
+   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="20" dut_y="20" dut_z="10" imaging_x="20" imaging_y="20" imaging_z="10" imaging_dxdy="" reticle_x="100" reticle_y="100"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="aperture" value="2.65"/>
    <!--Alignment SLB & IQ IS Devices Connect & Calibration Data Load-->
    <Parallel name="Parallel">
@@ -53,7 +51,7 @@
    <!-- IQ init -->
    <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="5" key="eyeboxids"/>
    <Action name="IQ_Metrics_CreateDBTable" ID="IQ_Metrics_CreateDBTable"/>
-   <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:\FAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}" csvname="SLB_{cur_datatime}_metrics" all_csvname="SLB_metrics_all"/>
+   <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:SAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}" csvname="SLB_{cur_datatime}_metrics" all_csvname="SLB_metrics_all"/>
    <!-- capture image -->
    <For name="For" traverse_params="{eyeboxids}">
     <Sequence name="Sequence">

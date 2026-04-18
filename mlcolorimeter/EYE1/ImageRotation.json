@@ -8,7 +8,7 @@
 	"DUT_RightEye":{
 		"FlippingX": false,
         "FlippingY": false,
-        "Rotation": -0.25
+        "Rotation": -0.43
 	},
 	"SLB":{
 		"FlippingX": false,

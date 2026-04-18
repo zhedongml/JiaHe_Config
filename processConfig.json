@@ -64,7 +64,7 @@
 				"Z": 150
 			},
 			"AlignOffset":{
-				"dx":0.15,
+				"dx":0.05,
 				"dy":2.31		
 			},
 			"CraftOffset":{		
@@ -93,7 +93,7 @@
 					"offsetX": 16.3982,
 					"offsetY": -58.7546
 				},
-				"eyeBoxCenterKeyenceValue":32.7812,
+				"eyeBoxCenterKeyenceValue":32.3375,
 				"fixedPos": {
 					"X": 62.8934,
 					"Y": -13.467,
@@ -136,8 +136,8 @@
 				"Z": 150
 			},
 			"AlignOffset":{
-				"dx":0.13,
-				"dy":1.93		
+				"dx":0.06,
+				"dy":1.96		
 			},
 			"CraftOffset":{		
 				"dx":-0.2,

@@ -7,18 +7,17 @@
    <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the DUT is loaded ?"/> -->
    <!-- devices connect -->
    <Sequence name="Sequence">
-    <Parallel name="Parallel">
      <Action name="AA_Connect_MeasureCameraMotionModule" ID="AA_Connect_MeasureCameraMotionModule"/>
      <Action name="AA_Connect_ProjectorMotionModule" ID="AA_Connect_ProjectorMotionModule"/>
      <Action name="AA_Connect_DutMotionModule" ID="AA_Connect_DutMotionModule"/>
      <Action name="Decoder_Connect" ID="Decoder_Connect"/>
      <Action name="Reticle_1D_Connect" ID="Reticle_1D_Connect"/>
-    </Parallel>
     <Action name="AA_Connect_MVCamera" ID="AA_Connect_MVCamera"/>
     <Action name="AA_Connect_Collimator" ID="AA_Connect_Collimator"/>
     <Action name="AA_Connect_Keyence" ID="AA_Connect_Keyence"/>
     <Action name="Colorimeter_Connect_All_Async" ID="Colorimeter_Connect_All_Async"/>
     <Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
+	<!-- <Action name="System_Tips_Combine" ID="System_Tips_Combine" content="Current Test Object Type: " condition1="{wafer_dut_num}" condition2="{size}" condition3="{eyetype}" extra=" Please check if the actual situation matches."/> -->
     <Action name="IQ_UpdateFlipRotation" ID="IQ_UpdateFlipRotation"/>
     <Parallel name="Parallel">
      <!-- IS connect & colorimeter load -->
@@ -28,7 +27,7 @@
     </Parallel>
    </Sequence>
    <Action name="IQ_IsUseAutoDP" ID="IQ_IsUseAutoDP" is_auto_dp="0"/>
-   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="30" dut_y="30" dut_z="10" imaging_x="30" imaging_y="30" imaging_z="10" imaging_dxdy="" reticle_x="" reticle_y=""/>
+   <Action name="AA_SetMotionMoveSpeed" ID="AA_SetMotionMoveSpeed" projector_dxdy="" dut_x="30" dut_y="30" dut_z="10" imaging_x="30" imaging_y="30" imaging_z="10" imaging_dxdy="" reticle_x="100" reticle_y="100"/>
    <!-- blackboard init -->
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_R" value="1.481"/>
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="ISphere_scale_G" value="0.934"/>
@@ -54,7 +53,7 @@
    <!-- alignment/ capture/ algo process -->
    <Sequence name="Sequence">
 	<Action name="AA_Dut_InitDUT" ID="AA_Dut_InitDUT"/>
-    <Action name="System_Tips" ID="System_Tips" tip="Please check if the prism is in DUT mode ?"/>
+    <!-- <Action name="System_Tips" ID="System_Tips" tip="Please check if the prism is in DUT mode ?"/> -->
     <For name="For" traverse_params="wafer_dut_num">
      <Sequence name="Sequence">
       <Action name="System_GetForNodeValue1" ID="System_GetForNodeValue1" value_key="cur_wafer_dutID"/>
@@ -72,11 +71,11 @@
        </IfThenElse>
        <Action name="AA_Dut_AdjustLevel" ID="AA_Dut_AdjustLevel"/>
        <Action name="AA_Dut_Ranging" ID="AA_Dut_Ranging"/>
-       <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="1" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/FAT_GRR/{cur_data}_MetricsTest/" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF"/>
+       <Action name="AA_Dut_FindFiducial" ID="AA_Dut_FindFiducial" is_auto="1" is_save="1" is_auto_exposure="0" exposure_time="{fiducial_expo_time}" root_dir="E:/SAT_GRR/{cur_data}_MetricsTest/" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF"/>
        <Action name="AA_Dut_Align_EntrancePupil" ID="AA_Dut_Align_EntrancePupil"/>
       </Sequence>
       <!-- define csv file & dut folder path -->
-      <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:\FAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF" csvname="{dutid}_{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all"/>
+      <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:\SAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}_WG_IQT-MTF" csvname="{dutid}_{cur_datatime}_metrics_{eyeboxids}" all_csvname="metrics_{eyeboxids}_all"/>
       <For name="For" traverse_params="{eyeboxids}">
        <Sequence name="Sequence">
         <Action name="System_GetForNodeValue1" ID="System_GetForNodeValue1" value_key="cur_eb"/>
