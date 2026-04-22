@@ -80,7 +80,7 @@
         "unit": "",
         "color": [ "R", "G", "B" ],
         "images": [ "$color$_grid_$eyeboxId$_Clear" ],
-        "suffix": [ "HorAvg_6.25", "VerAvg_6.25", "HorMin_6.25", "VerMin_6.25", "HorAvg_12.5", "VerAvg_12.5", "HorMin_12.5", "VerMin_12.5" ],
+        "suffix": [ "HorAvg_6.75", "VerAvg_6.75", "HorMin_6.75", "VerMin_6.75", "HorAvg_13.5", "VerAvg_13.5", "HorMin_13.5", "VerMin_13.5" ],
         "logheader": "GridDenseMTF_$color$_Y_$suffix$_0$eyeboxId$Eyebox",
         "eyeboxId": [ "1", "2", "3", "4", "5"]
       }

@@ -18,10 +18,10 @@
     <Action name="Colorimeter_Connect_All_Async" ID="Colorimeter_Connect_All_Async"/>
 	<Action name="AA_Dut_GetDutType" ID="AA_Dut_GetDutType" size_key="size" eyetype_key="eyetype" wafer_dut_num_key="wafer_dut_num" wafer_cust_type=""/>
 	<Action name="IQ_UpdateFlipRotation" ID="IQ_UpdateFlipRotation"/>
+	<Action name="SetBlackboard" ID="SetBlackboard" output_key="aperture" value="3"/>
     <Parallel name="Parallel">
      <!-- IS connect & colorimeter load -->
      <Action name="IS_Connect" ID="IS_Connect"/>
-     <Action name="SetBlackboard" ID="SetBlackboard" output_key="aperture" value="3"/>
      <Action name="Colorimeter_LoadCalibrationData" ID="Colorimeter_LoadCalibrationData" aperture="{aperture}" binning="1" colorfilter_list="X,Y,Z,Clear" ndfliter_list="ND0" lightsource_list="R,G,B" is_load_dark="1" is_load_colorshift="1" is_load_ffc="1" is_load_distortion="1" is_load_exposure="1" is_load_fliprotation="1" is_load_luminance="1" is_load_fourcolor="0"/>
     </Parallel>
    </Sequence>
