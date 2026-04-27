@@ -180,7 +180,7 @@
       "BitSize": 1,
       "On": "Open",
       "Off": "Close",
-      "Visible": 1
+      "Visible": 0
     },
 	{
       "Index": 17,
@@ -235,7 +235,7 @@
       "BitSize": 1,
       "On": "On",
       "Off": "Off",
-      "Visible": 1
+      "Visible": 0
     },
 	{
       "Index": 22,
@@ -246,7 +246,7 @@
       "BitSize": 1,
       "On": "On",
       "Off": "Off",
-      "Visible": 1
+      "Visible": 0
     },
 	{
       "Index": 23,
@@ -261,7 +261,7 @@
     },
 	{
       "Index": 24,
-      "Name": "Sensor A",
+      "Name": "Sensor Small Right",
       "Offset": "1.0",
       "Default": 0,
       "ReadOnly": 1,
@@ -272,7 +272,7 @@
     },
 	{
       "Index": 25,
-      "Name": "Sensor B",
+      "Name": "Sensor Large Left",
       "Offset": "1.1",
       "Default": 0,
       "ReadOnly": 1,
@@ -283,7 +283,7 @@
     },
 	{
       "Index": 26,
-      "Name": "Sensor C",
+      "Name": "Sensor Large Right",
       "Offset": "1.2",
       "Default": 0,
       "ReadOnly": 1,
@@ -294,7 +294,7 @@
     },
 	{
       "Index": 27,
-      "Name": "Sensor D",
+      "Name": "Sensor Wafer",
       "Offset": "1.3",
       "Default": 0,
       "ReadOnly": 1,

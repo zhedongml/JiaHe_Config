@@ -33,8 +33,8 @@
     "crossMTFHeight": 350
   },
   "mtfFreq": {
-    "mtfFreq": 6.25,
-    "mtfFreq2": 12.5
+    "mtfFreq": 6.75,
+    "mtfFreq2": 13.5
   },
   "distortion": {
     "distortonTheHor": 49.5,
