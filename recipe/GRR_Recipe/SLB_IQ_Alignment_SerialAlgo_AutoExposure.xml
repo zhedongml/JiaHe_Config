@@ -51,7 +51,7 @@
    <!-- IQ init -->
    <Action name="IQ_SetEyeboxList" ID="IQ_SetEyeboxList" eyeboxlist="5" key="eyeboxids"/>
    <Action name="IQ_Metrics_CreateDBTable" ID="IQ_Metrics_CreateDBTable"/>
-   <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:SAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}" csvname="SLB_{cur_datatime}_metrics" all_csvname="SLB_metrics_all"/>
+   <Action name="IQ_Metrics_CreateResultFile" ID="IQ_Metrics_CreateResultFile" root_dir="E:\SAT_GRR\{cur_data}_MetricsTest" dut_seq="{dutid}_{cur_datatime}" csvname="SLB_{cur_datatime}_metrics" all_csvname="SLB_metrics_all"/>
    <!-- capture image -->
    <For name="For" traverse_params="{eyeboxids}">
     <Sequence name="Sequence">
