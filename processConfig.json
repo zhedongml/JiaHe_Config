@@ -4,7 +4,7 @@
 			"name": "Large_Right",
 			"projection": {
 				"projectionTiptilt": {
-					"dX": -10.49,
+					"dX": -10.570,
 					"dY": 0.04
 				},
 				"projectionOffsetRelativeToMV": {
@@ -25,7 +25,7 @@
 				"fixedPos": {
 					"X": 64.382,
 					"Y": -11.925,
-					"Z": 38.816
+					"Z": 38.594
 				}
 			},
 			"dut":{
@@ -41,10 +41,10 @@
 				"dutTipTiltDyMin":-0.06,
 				"dutMotorAngleMax": 1,
 				"dutMotorAngleMin": 0.7,
-				"inputAlignmentMotorPosXMax": -64,
-				"inputAlignmentMotorPosXMin": -68,
-				"inputAlignmentMotorPosYMax": 0,
-				"inputAlignmentMotorPosYMin": -2,
+				"inputAlignmentMotorPosXMax": -23,
+				"inputAlignmentMotorPosXMin": -28,
+				"inputAlignmentMotorPosYMax": -88,
+				"inputAlignmentMotorPosYMin": -93,
 				"rangingMax": 34,
 				"rangingMin": 30
 			},
@@ -64,8 +64,8 @@
 				"Z": 150
 			},
 			"AlignOffset":{
-				"dx":0.72,
-				"dy":0.67		
+				"dx":0.298,
+				"dy":0.65		
 			},
 			"CraftOffset":{		
 				"dx":-0.2,
@@ -76,7 +76,7 @@
 			"name": "Large_Left",
 			"projection": {
 				"projectionTiptilt": {
-					"dX": -10.49,
+					"dX": -10.570,
 					"dY": 0.04
 				},
 				"projectionOffsetRelativeToMV": {
@@ -97,7 +97,7 @@
 				"fixedPos": {
 					"X": 64.382,
 					"Y": -11.925,
-					"Z": 38.816
+					"Z": 38.594
 				}
 			},
 			"dut":{
@@ -113,10 +113,10 @@
 				"dutTipTiltDyMin":-0.06,
 				"dutMotorAngleMax": 1,
 				"dutMotorAngleMin": 0.7,
-				"inputAlignmentMotorPosXMax": -64,
-				"inputAlignmentMotorPosXMin": -68,
-				"inputAlignmentMotorPosYMax": 0,
-				"inputAlignmentMotorPosYMin": -2,
+				"inputAlignmentMotorPosXMax": -23,
+				"inputAlignmentMotorPosXMin": -28,
+				"inputAlignmentMotorPosYMax": -88,
+				"inputAlignmentMotorPosYMin": -93,
 				"rangingMax": 34,
 				"rangingMin": 30
 			},
@@ -136,8 +136,8 @@
 				"Z": 150
 			},
 			"AlignOffset":{
-				"dx":0.64,
-				"dy":0.28		
+				"dx":0.295,
+				"dy":0.273		
 			},
 			"CraftOffset":{		
 				"dx":-0.2,

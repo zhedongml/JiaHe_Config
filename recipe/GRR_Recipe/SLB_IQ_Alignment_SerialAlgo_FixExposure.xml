@@ -18,11 +18,11 @@
    <Action name="SetBlackboard" ID="SetBlackboard" output_key="aperture" value="2.65"/>
    <!--Alignment SLB & IQ IS Devices Connect & Calibration Data Load-->
    <Parallel name="Parallel">
-    <!-- <Sequence name="Sequence"> -->
-    <!-- <Action name="AA_SLB_LoadSLB" ID="AA_SLB_LoadSLB"/> -->
-    <!-- <Action name="System_Tips" ID="System_Tips" tip="Please confirm whether the prism is in the SLB test state?"/> -->
-    <!-- <Action name="AA_SLB_Alignment" ID="AA_SLB_Alignment"/> -->
-    <!-- </Sequence> -->
+    <Sequence name="Sequence">
+    <Action name="AA_SLB_LoadSLB" ID="AA_SLB_LoadSLB"/>
+    <Action name="System_Tips" ID="System_Tips" tip="Please confirm whether the prism is in the SLB test state?"/>
+    <Action name="AA_SLB_Alignment" ID="AA_SLB_Alignment"/>
+    </Sequence>
     <Sequence name="Sequence">
      <Action name="Colorimeter_Connect_All_Async" ID="Colorimeter_Connect_All_Async"/>
      <Action name="Colorimeter_Camera_StopGrabbing" ID="Colorimeter_Camera_StopGrabbing"/>
@@ -105,7 +105,7 @@
       <Action name="IQ_Metrics_ExportToCSV" ID="IQ_Metrics_ExportToCSV"/>
      </SequenceStar>
     </Sequence>
-    <!-- <Action name="AA_SLB_LoadSLB" ID="AA_SLB_LoadSLB"/> -->
+    <Action name="AA_SLB_LoadSLB" ID="AA_SLB_LoadSLB"/>
    </Parallel>
   </Sequence>
  </BehaviorTree>
